@@ -21,10 +21,10 @@ Route::get('/', function () {
 // Route::get('/movies', MovieController::class, 'index');
 // Route::get('/movies/{id}', MovieController::class, 'show');
 
-Route::middleware(['auth:sanctum', 'verified', 'role:admin'])->group(function () {
-    Route::get('/dashboard', function (){
-        return view('welcome');
-    })->name('dashboard');
-
-    
-});
+// Route::middleware(['auth:sanctum', 'verified', 'role:admin'])->group(function () {
+    // Route::get('/dashboard', function (){
+        // return view('welcome');
+    // })->name('dashboard');
+// 
+    // 
+// });

@@ -21,9 +21,8 @@ class CreateMoviesTable extends Migration
             $table->string('language');
             $table->integer('release_date');
             $table->text('img_path');
-            $table->text('trailer_path');
-            $table->integer('top_rating')->default(0);
-            $table->string('movie_genres')->default(null);
+            $table->string('trailer_path')->nullable();
+            $table->string('movie_genres')->nullable();
             $table->timestamps();
         });
     }

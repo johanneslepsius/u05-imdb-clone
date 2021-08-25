@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Movie extends Model
 {
+    use \Backpack\CRUD\app\Models\Traits\CrudTrait;
     use HasFactory;
 
-    protected $guarded = [];
+    protected $guarded = ['id', 'created_at', 'updated_at'];
 }
