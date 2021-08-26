@@ -9,12 +9,12 @@ use App\Models\Movie;
 class MovieController extends Controller
 {
     public function index() {
-        $movies = DB::table('movies')->get();
+        $movies = DB::table('movies')->paginate(10);
         return view('movies.index', compact('movies'));
     }
 
     public function show($id) {
-        $movie = Movie::find($id)
+        $movie = Movie::find($id);
         return view('movies.show', ['movie' => $movie]);
     }
 }
