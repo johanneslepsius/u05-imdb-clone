@@ -20,7 +20,7 @@ class CreateMoviesTable extends Migration
             $table->string('actors');
             $table->string('language');
             $table->integer('release_date');
-            $table->text('img_path');
+            $table->text('img_path')->nullable();
             $table->string('trailer_path')->nullable();
             $table->string('movie_genres')->nullable();
             $table->timestamps();

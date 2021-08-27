@@ -14,16 +14,20 @@ use App\Http\Controllers\MovieController;
 |
 */
 
-Route::get('/', [MovieController::class, 'index']);
-Route::get('/movie/{movie}', [MovieController::class, 'show']);
+// Route::get('/', [MovieController::class, 'index']);
+Route::get('/movies', [MovieController::class, 'index']);
+Route::get('/movies/{movie}', [MovieController::class, 'show']);
+Route::any('/{any}', function () {
+    return redirect('/movies');
+});
 
 // Route::get('/movies', MovieController::class, 'index');
 // Route::get('/movies/{id}', MovieController::class, 'show');
 
 // Route::middleware(['auth:sanctum', 'verified', 'role:admin'])->group(function () {
-    // Route::get('/dashboard', function (){
-        // return view('welcome');
-    // })->name('dashboard');
-// 
-    // 
+//     Route::get('/dashboard', function (){
+//         return view('welcome');
+//     })->name('dashboard');
+
+    
 // });

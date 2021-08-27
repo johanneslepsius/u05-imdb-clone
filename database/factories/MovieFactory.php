@@ -27,8 +27,6 @@ class MovieFactory extends Factory
             'actors' => $this->faker->words(3, true),
             'language' => $this->faker->word(),
             'release_date' => $this->faker->randomNumber(6, true),
-            'img_path' => $this->faker->url(),
-            'trailer_path' => $this->faker->url(),
             'movie_genres' => $this->faker->words(3, true),
         ];
     }

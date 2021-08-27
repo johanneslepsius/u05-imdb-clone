@@ -3,18 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\Movie;
 
 
 class MovieController extends Controller
 {
     public function index() {
-        $movies = DB::table('movies')->paginate(10);
-        return view('movies.index', compact('movies'));
+        return view('movies.index', ['movies' => DB::table('movies')->paginate(12)]);
     }
 
     public function show($id) {
-        $movie = Movie::find($id);
-        return view('movies.show', ['movie' => $movie]);
+        return view('movies.show', ['movie' => Movie::find($id)]);
     }
 }
