@@ -1,6 +1,6 @@
 <nav class="flex items-center justify-between flex-wrap bg-purple-900 p-6">
   <div class="flex items-center flex-no-shrink text-white mr-6">
-      <img src="/images/moo-vies.svg" alt="logo" class ="h-10 mr-6">
+      <a href="/"><img src="/images/moo-vies.svg" alt="logo" class ="h-10 mr-6"></a>
     <span class="font-semibold text-xl tracking-tight">Moo-vies</span>
   </div>
   <div class="block lg:hidden">
