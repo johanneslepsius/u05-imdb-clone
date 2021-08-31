@@ -1,64 +1,84 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
-
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <a href="https://github.com/chas-academy/u08-recipe-api-johanneslepsius">
+      <img src="/public/images/moo-vies.svg" alt="Logo" width="80" height="80">
+  </a>
+
+  <h3 align="center">Movie Database</h3>
+
+  <p align="center">
+    My favourite movies, presented in a Laravel frontend and administered with backpack.
+  </p>
 </p>
 
-## About Laravel
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+A website that shows my favourite movies (and some lorem ipsum examples...) entirely made with the laravelecosystem. From a database made with migrations, to blade-components styled with tailwind and a backpack-adminpanel.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Deployed version: https://johannesmdb.herokuapp.com/
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+### Built With
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+* [Laravel Sail](https://laravel.com/docs/8.x/sail), so you need [Docker](https://www.docker.com/)
+* [Laravel Backpack](https://backpackforlaravel.com/)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+<!-- GETTING STARTED -->
+## Getting Started
 
-### Premium Partners
+To get a local copy up and running follow these simple steps.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[CMS Max](https://www.cmsmax.com/)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
+### Prerequisites
 
-## Contributing
+* WSL2
+* [Docker for WSL2](https://docs.docker.com/desktop/windows/wsl/)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Installation (on WSL2)
 
-## Code of Conduct
+1. Clone the repo & cd into folder
+   ```sh
+   git clone https://github.com/johanneslepsius/u05-imdb-clone && cd u05-imdb-clone
+   ```
+2. Install Composer Dependencies [more info](https://laravel.com/docs/8.x/sail#installing-composer-dependencies-for-existing-projects)
+   If you copy the command from the docs, don't forget to remove the line breaks \
+   ```sh
+   docker run --rm -u "$(id -u):$(id -g)" -v $(pwd): /opt -w /opt laravelsail/php80-composer:latest composer install --ignore-platform-reqs
+   ```
+4. Create environment file
+   ```sh
+   cp .env.example .env
+   ```
+5. Start sail
+   ```sh
+    ./vendor/bin/sail up
+   ```
+6. Open another wsl tab and cd into project
+7. Create sail alias
+   ```sh
+   alias sail="./vendor/bin/sail"
+   ```
+8. Create app encryption key
+   ```sh
+   sail php artisan key:generate
+   ```
+9. Migrate & seed the database
+    ```sh
+   sail php artisan migrate
+   ```
+   Make sure both factories in database/seeders/DatabaseSeeder.php are NOT commented out.
+   ```sh
+   sail php artisan db:seed
+   ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+If you still can't make it work, take a look at [this article](https://medium.com/@achalaarunalu/setting-up-an-existing-laravel-8-sail-docker-project-on-windows-wsl2-and-ubuntu-20-04-f0def4210258).
 
-## Security Vulnerabilities
+<!-- USAGE EXAMPLES -->
+## Usage
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Navigate to "localhost/admin" in your browser and log in with email: admin@jmdb.se  pass: admin123
+Or to localhost if you would like to see the movies.
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
