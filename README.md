@@ -3,7 +3,7 @@
       <img src="/public/images/moo-vies.svg" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Movie Database</h3>
+  <h3 align="center">Moo-vie Database</h3>
 
   <p align="center">
     My favourite movies, presented in a Laravel frontend and administered with backpack.
