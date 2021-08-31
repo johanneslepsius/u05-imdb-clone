@@ -6,14 +6,14 @@
   <h3 align="center">Moo-vie Database</h3>
 
   <p align="center">
-    My favourite movies, presented in a Laravel frontend and administered with backpack.
+    My favourite movies, presented entirely with laravel and administered with backpack.
   </p>
 </p>
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-A website that shows my favourite movies (and some lorem ipsum examples...) entirely made with the laravelecosystem. From a database made with migrations, to blade-components styled with tailwind and a backpack-adminpanel.
+A website that shows my favourite movies (and some lorem ipsum examples...) entirely made with the laravel ecosystem. From a database made with migrations, to blade-components styled with tailwind and a backpack-adminpanel.
 
 Deployed version: https://johannesmdb.herokuapp.com/
 
